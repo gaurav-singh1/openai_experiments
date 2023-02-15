@@ -27,8 +27,9 @@ client.on('qr', (qr) => {
 client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then((chats) => {
-        selected_chat = chats.filter((chat) => chat.name === 'Notes')
-        console.log(selected_chat);
+        const notes_group = chats.filter((chat) => chat.name === 'Notes')
+        console.log(notes_group);
+        client.sendMessage(notes_group[0].id._serialized, "pongy pong!")
     });
 });
 
