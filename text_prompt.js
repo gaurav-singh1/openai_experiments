@@ -6,6 +6,10 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+/** 
+ * Method for completing a text when a prompt is passed
+ * @param {text_prompt} - string type text prompt
+*/
 function getSuggestions(text_prompt) {
   const response = openai.createCompletion({
     model: 'text-davinci-003',
@@ -16,5 +20,7 @@ function getSuggestions(text_prompt) {
   return response;
 }
 
-getSuggestions('was brexit really useful for britain?').then((result) =>
-  console.log(result.data.choices));
+
+
+
+  module.exports = { getSuggestions };
