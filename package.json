@@ -5,13 +5,15 @@
   "type": "commonjs",
   "main": "first_call.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon whatsapp_web_login.js --ignore .wweb*"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.34.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "openai": "^3.1.0",
