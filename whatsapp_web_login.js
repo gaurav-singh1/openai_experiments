@@ -17,14 +17,17 @@ client.on('qr', (qr) => {
 client.on('ready', () => {
     console.log('Client is ready!');
     client.getChats().then((chats) => {
-        const notes_group = chats.filter((chat) => chat.name === 'Notes')
-        console.log(notes_group);
-        client.sendMessage(notes_group[0].id._serialized, "pongy pong!")
+        // const notes_group = chats.filter((chat) => chat.name === 'Notes')
+        // console.log(notes_group);
+        // if(notes_group[0].name==='Notes'){
+        //     client.sendMessage(notes_group[0].id._serialized, "Test Message")
+        // }
+        
     });
 });
 
 client.initialize();
-client.on('message', message => {
+client.on('message_create', message => {
     console.log("message arrived", message);
 });
  
