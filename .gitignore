@@ -1,6 +1,7 @@
 package-lock.json
 .eslint*
-
+session.json
+.wwebjs_auth
 # Logs
 logs
 *.log
