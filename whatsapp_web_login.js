@@ -1,6 +1,7 @@
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const { Client, LocalAuth } = require('whatsapp-web.js');
+const { getSuggestions } = require('./text_prompt');
 
 const client = new Client({
     authStrategy: new LocalAuth()
@@ -27,7 +28,14 @@ client.on('ready', () => {
 
 client.initialize();
 client.on('message_create', message => {
-    console.log("message arrived", message);
+    if(message.includes('ms/')) {
+        console.log("attempting to search!")
+        const searchQur = message.split("ms/")[1];
+        if(searchQur){
+            getSuggestions(searchQur).then((result) =>
+            console.log(result.data.choices));
+        }
+    }
 });
  
 
