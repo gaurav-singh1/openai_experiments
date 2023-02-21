@@ -14,7 +14,7 @@ function getSuggestions(text_prompt) {
   const response = openai.createCompletion({
     model: 'text-davinci-003',
     prompt: text_prompt,
-    max_tokens: 50,
+    max_tokens: 200,
     temperature: 0,
   });
   return response;
