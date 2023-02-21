@@ -28,10 +28,13 @@ client.on('ready', () => {
 
 client.initialize();
 client.on('message_create', message => {
-    if(message.includes('ms/')) {
+    console.log("message created!!")
+    console.log(message)
+    if(message.body.includes('ms/')) {
         console.log("attempting to search!")
-        const searchQur = message.split("ms/")[1];
+        const searchQur = message.body.split("ms/")[1];
         if(searchQur){
+            console.log("your search query is = ", searchQur)
             getSuggestions(searchQur).then((result) =>
             console.log(result.data.choices));
         }
