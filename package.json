@@ -17,8 +17,10 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "mongoose": "^6.9.2",
     "openai": "^3.1.0",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.19.4"
+    "whatsapp-web.js": "^1.19.4",
+    "wwebjs-mongo": "^1.1.0"
   }
 }
